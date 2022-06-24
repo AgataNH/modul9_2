@@ -23,12 +23,13 @@ def calculate():
         quantity = data_2.get('quantity')
 
         i = 0
-        for i in range(12):
-            if code == rates[i]['code']:
-                count = quantity * rates[i]['ask']
+        for rate in rates:
+            print(code, rate['code'])
+            if code == rate['code']:
+                count = quantity * rate['ask']
                 return f'Za {quantity} PLN dostaniesz {count} {code}'
-            else:
-                return f'Nie ma takiej waluty'
+        else:
+            return f'Nie ma takiej waluty'
 
     return render_template("main.html")
 
