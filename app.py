@@ -26,7 +26,7 @@ def calculate():
         for rate in rates:
             print(code, rate['code'])
             if code == rate['code']:
-                count = quantity * rate['ask']
+                count = int(quantity) * rate['ask']
                 return f'Za {quantity} PLN dostaniesz {count} {code}'
         else:
             return f'Nie ma takiej waluty'
